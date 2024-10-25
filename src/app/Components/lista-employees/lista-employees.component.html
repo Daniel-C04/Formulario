@@ -1,0 +1,19 @@
+<div>
+    <h2>Lista de empleados</h2>
+    <button type="button" class="btn btn-secondary" [routerLink]="['/employees']">Agregar</button>
+</div>
+<hr>
+<div class="row row-cols-md-3">
+    <div class="card" style="width: 18rem;" *ngFor="let empl of employees; let i = index">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{empl.first_name}}</li>
+            <li class="list-group-item">{{empl.last_name}}</li>
+            <li class="list-group-item">{{empl.email}}</li>
+            <div class="buttons">
+                <button type="button" class="btn btn-primary" (click)="verEmpleado(i)">Editar</button>
+                <button type="button" class="btn btn-primary" (click)="eliminarEmpleado(i+1)">Eliminar</button>
+            </div>
+
+        </ul>
+    </div>
+</div>
